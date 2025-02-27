@@ -24,15 +24,16 @@
   
   /* Botón de menú hamburguesa */
   .menu-toggle {
-    display: none;
-    position: fixed;
-    top: 70px;
+    display: block;
+    position: absolute;
+    top: 15px;
     right: 15px;
     font-size: 24px;
     background: none;
     border: none;
     color: rgb(255, 255, 255);
     cursor: pointer;
+    z-index: 1000;
   }
   
   /* Menú de navegación */
@@ -128,4 +129,13 @@
       padding: 10px 0;
     }
   }
+  @media (max-width: 768px) {
+    .menu-toggle {
+        top: 10px;
+    }
+
+    header {
+        padding-top: 60px; /* Asegura espacio suficiente en móviles */
+    }
+}
   
