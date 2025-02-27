@@ -1,6 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
     // Obtener todos los enlaces de navegación
     const links = document.querySelectorAll(".nav-link");
+    const menu = document.querySelector("nav ul");
+    const menuToggle = document.querySelector(".menu-toggle");
 
     // Agregar evento de clic a cada enlace
     links.forEach(link => {
@@ -12,6 +14,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
             // Llamar a la función para mostrar la sección correspondiente
             mostrarSeccion(seccionId);
+
+            // Si el menú está desplegado en móvil, lo cerramos
+            if (menu.classList.contains("active")) {
+                menu.classList.remove("active");
+            }
         });
     });
 
@@ -29,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Menú hamburguesa para móviles
-    document.querySelector(".menu-toggle").addEventListener("click", function () {
-        document.querySelector("nav ul").classList.toggle("active");
+    menuToggle.addEventListener("click", function () {
+        menu.classList.toggle("active");
     });
 });
