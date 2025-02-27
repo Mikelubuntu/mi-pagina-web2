@@ -1,116 +1,123 @@
 /* Reset de estilos */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  /* Cuerpo */
-  body {
-    font-family: 'Arial', sans-serif;
-    line-height: 1.6;
-    background-color: #f9f9f9;
-    color: #333;
-  }
-  
-  /* Encabezado */
-  header {
-    background-color: #376139;
-    color: white;
-    padding: 20px;
-    text-align: center;
-    position: relative;
-  }
-  
-  /* Botón de menú hamburguesa */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Cuerpo */
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+/* Encabezado */
+header {
+  background-color: #376139;
+  color: white;
+  padding: 50px 20px 20px; /* Aumenta el padding superior */
+  text-align: center;
+  position: relative;
+}
+
+/* Botón de menú hamburguesa */
+.menu-toggle {
+  display: block;
+  position: absolute;  /* Lo fijamos en la parte superior derecha */
+  top: 15px;
+  right: 15px;
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  z-index: 1000; /* Asegura que siempre esté por encima */
+}
+
+/* Menú de navegación */
+nav ul {
+  list-style: none;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  background-color: #333;
+}
+
+nav ul li {
+  margin: 0 10px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 8px 16px;
+  display: block;
+}
+
+nav a:hover {
+  background-color: #575757;
+  border-radius: 4px;
+}
+
+/* Contenedor principal */
+.container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Secciones */
+.seccion {
+  display: none;
+  padding: 20px;
+}
+
+.seccion:first-child {
+  display: block;
+}
+
+/* Botón de envío */
+button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+/* Pie de página */
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  margin-top: 20px;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+  /* Ajustar menú hamburguesa */
   .menu-toggle {
-    display: block;
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    font-size: 24px;
-    background: none;
-    border: none;
-    color: rgb(255, 255, 255);
-    cursor: pointer;
-    z-index: 1000;
+      top: 10px; /* Ajuste para que no cubra el título */
   }
-  
-  /* Menú de navegación */
+
+  /* Asegurar espacio suficiente para el encabezado */
+  header {
+      padding-top: 60px;
+  }
+
+  /* Ajustar el menú de navegación */
   nav ul {
-    list-style: none;
-    padding: 10px;
-    display: flex;
-    justify-content: center;
-    background-color: #333;
-  }
-  
-  nav ul li {
-    margin: 0 10px;
-  }
-  
-  nav a {
-    color: white;
-    text-decoration: none;
-    padding: 8px 16px;
-    display: block;
-  }
-  
-  nav a:hover {
-    background-color: #575757;
-    border-radius: 4px;
-  }
-  
-  /* Contenedor principal */
-  .container {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Secciones */
-  .seccion {
-    display: none;
-    padding: 20px;
-  }
-  
-  .seccion:first-child {
-    display: block;
-  }
-  
-  /* Botón de envío */
-  button {
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 4px;
-  }
-  
-  button:hover {
-    background-color: #45a049;
-  }
-  
-  /* Pie de página */
-  footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 10px;
-    margin-top: 20px;
-  }
-  
-  /* RESPONSIVE DESIGN */
-  @media (max-width: 768px) {
-    .menu-toggle {
-      display: block;
-    }
-  
-    nav ul {
       display: none;
       flex-direction: column;
       background-color: #333;
@@ -118,24 +125,21 @@
       top: 60px;
       width: 100%;
       left: 0;
-    }
-  
-    nav ul.active {
-      display: flex;
-    }
-  
-    nav ul li {
-      text-align: center;
-      padding: 10px 0;
-    }
   }
-  @media (max-width: 768px) {
-    .menu-toggle {
-        top: 10px;
-    }
 
-    header {
-        padding-top: 60px; /* Asegura espacio suficiente en móviles */
-    }
+  /* Mostrar menú cuando está activo */
+  nav ul.active {
+      display: flex;
+  }
+
+  /* Mejorar la visibilidad de los elementos en móviles */
+  nav ul li {
+      text-align: center;
+      padding: 15px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  nav ul li:last-child {
+      border-bottom: none;
+  }
 }
-  
