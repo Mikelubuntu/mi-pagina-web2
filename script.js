@@ -17,7 +17,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
             // Si el menú está desplegado en móvil, lo cerramos
             if (menu.classList.contains("active")) {
-                menu.classList.remove("active");
+                setTimeout(() => {
+                    menu.classList.remove("active");
+                }, 200); // Espera 200ms para cerrar suavemente
             }
         });
     });
@@ -27,16 +29,15 @@ document.addEventListener("DOMContentLoaded", function () {
         const secciones = document.querySelectorAll(".seccion");
 
         secciones.forEach(seccion => {
-            if (seccion.id === seccionId) {
-                seccion.style.display = "block"; // Mostrar la sección activa
-            } else {
-                seccion.style.display = "none"; // Ocultar las demás
-            }
+            seccion.style.display = seccion.id === seccionId ? "block" : "none";
         });
     }
 
-    // Menú hamburguesa para móviles
-    menuToggle.addEventListener("click", function () {
-        menu.classList.toggle("active");
-    });
+    // Menú hamburguesa para móviles (verifica que `menuToggle` exista)
+    if (menuToggle) {
+        menuToggle.addEventListener("click", function () {
+            menu.classList.toggle("active");
+        });
+    }
 });
+
