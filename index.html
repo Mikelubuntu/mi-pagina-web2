@@ -59,12 +59,42 @@
         <button type="submit">Enviar</button>
       </form>
       
-      <p id="mensajeConfirmacion" class="mensaje-confirmacion">
-        ✅ Tu mensaje ha sido enviado con éxito.
-      </p>
-    </section>
-  </main>
+  <!-- Mensaje de confirmación (oculto por defecto) -->
+  <p id="mensajeConfirmacion" style="display: none; color: green; font-weight: bold; margin-top: 10px;">
+    ✅ Tu mensaje ha sido enviado con éxito.
+  </p>
+</section>
 
+<script>
+  document.getElementById("contactoForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // Evita el envío predeterminado
+
+    // Obtener los valores del formulario
+    const nombre = document.getElementById("nombre").value;
+    const email = document.getElementById("email").value;
+    const mensaje = document.getElementById("mensaje").value;
+
+    // Construir el enlace mailto
+    const mailtoLink = mailto:mikel.hernandez@casaricardo.com?subject=Contacto desde la web&body=Nombre: ${nombre}%0AEmail: ${email}%0AMensaje: ${mensaje};
+    
+    // Abrir el cliente de correo
+    window.location.href = mailtoLink;
+
+    // Mostrar mensaje de confirmación después de 2 segundos
+    setTimeout(() => {
+      document.getElementById("mensajeConfirmacion").style.display = "block";
+    }, 2000);
+
+    // Opcional: Vaciar los campos del formulario
+    setTimeout(() => {
+      document.getElementById("contactoForm").reset();
+    }, 2500);
+  });
+</script>
+
+
+
+  <!-- Pie de página -->
   <footer>
     <p>&copy; 2025 Nuestra Página Web. Todos los derechos reservados.</p>
   </footer>
