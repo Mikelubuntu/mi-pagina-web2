@@ -25,7 +25,7 @@
   /* Botón de menú hamburguesa */
   .menu-toggle {
     display: none;
-    position: absolute;
+    position: fixed;
     top: 15px;
     right: 15px;
     font-size: 24px;
