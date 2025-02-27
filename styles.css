@@ -1,0 +1,131 @@
+/* Reset de estilos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Cuerpo */
+  body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+    color: #333;
+  }
+  
+  /* Encabezado */
+  header {
+    background-color: #376139;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+  }
+  
+  /* Botón de menú hamburguesa */
+  .menu-toggle {
+    display: none;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+  }
+  
+  /* Menú de navegación */
+  nav ul {
+    list-style: none;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    background-color: #333;
+  }
+  
+  nav ul li {
+    margin: 0 10px;
+  }
+  
+  nav a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 16px;
+    display: block;
+  }
+  
+  nav a:hover {
+    background-color: #575757;
+    border-radius: 4px;
+  }
+  
+  /* Contenedor principal */
+  .container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Secciones */
+  .seccion {
+    display: none;
+    padding: 20px;
+  }
+  
+  .seccion:first-child {
+    display: block;
+  }
+  
+  /* Botón de envío */
+  button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  
+  /* Pie de página */
+  footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+  }
+  
+  /* RESPONSIVE DESIGN */
+  @media (max-width: 768px) {
+    .menu-toggle {
+      display: block;
+    }
+  
+    nav ul {
+      display: none;
+      flex-direction: column;
+      background-color: #333;
+      position: absolute;
+      top: 60px;
+      width: 100%;
+      left: 0;
+    }
+  
+    nav ul.active {
+      display: flex;
+    }
+  
+    nav ul li {
+      text-align: center;
+      padding: 10px 0;
+    }
+  }
+  
